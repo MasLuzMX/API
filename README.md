@@ -23,6 +23,7 @@ Start the development!
 Simple like this
 ```php
 $ml = new MasLuz('1234', 'a secret');
+$ml->getAccessToken();
 ```
 With this you can start working on MasLuz's APIs.
 
@@ -34,11 +35,6 @@ There are some design considerations worth to mention.
 
 3. This SDK will include [curl](http://php.net/manual/en/book.curl.php) for internal usage.
 
-4. If you already have the access_token you can pass in the constructor
-
-```php
-$ml = new MasLuz('1234', 'a secret', 'Access_Token', 'Refresh_Token');
-```
 #### Making GET calls
 
 ```php
@@ -49,7 +45,7 @@ $result = $ml->get('/customers');
 
 ```php
 
-  #this body will be converted into json for you
+#this body will be converted into json for you
 $body = array('foo' => 'bar', 'bar' => 'foo');
 
 $response = $ml->post('/customers', $body);
@@ -59,7 +55,7 @@ $response = $ml->post('/customers', $body);
 
 ```php
 
-  #this body will be converted into json for you
+#this body will be converted into json for you
 $body = array('foo' => 'bar', 'bar' => 'foo');
 
 $response = $ml->put('/customers', $body);
@@ -69,6 +65,9 @@ $response = $ml->put('/customers', $body);
 ```php
 $response = $ml->delete('/customers/123')
 ```
+## Warning
+
+MasLuz API's only support server-side aplications.
 
 ## I want to contribute!
 
