@@ -1,9 +1,9 @@
 <?php
-class Client
+class MasLuz
 {
 
     /**
-     * @version 1.0.0
+     * @version 0.0.1
      */
     const VERSION  = "0.0.1";
 
@@ -25,7 +25,7 @@ class Client
      * Configuration for CURL
      */
     public static $CURL_OPTS = array(
-        CURLOPT_USERAGENT => "ML-SDK-0.0.1", 
+        CURLOPT_USERAGENT => "MasLuz-SDK-0.0.1", 
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_CONNECTTIMEOUT => 10, 
         CURLOPT_RETURNTRANSFER => 1, 
