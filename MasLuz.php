@@ -11,8 +11,8 @@ class MasLuz
      * @var $API_ROOT_URL is a main URL to access the API's.
      * @var $OAUTH_URL is a url to autenticate.
      */
-    protected $API_ROOT_URL = "ec2-54-69-99-24.us-west-2.compute.amazonaws.com";
-    protected $OAUTH_URL    = "ec2-54-69-99-24.us-west-2.compute.amazonaws.com/oauth";
+    protected $API_ROOT_URL = "http://api.masluz.mx";
+    protected $OAUTH_URL    = "oauth";
     
     protected $client_id;
     protected $client_secret;
