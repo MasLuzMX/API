@@ -13,7 +13,7 @@ class MasLuz
      */
     protected $API_ROOT_URL = "ec2-54-69-99-24.us-west-2.compute.amazonaws.com";
     protected $OAUTH_URL    = "ec2-54-69-99-24.us-west-2.compute.amazonaws.com/oauth";
-
+    
     protected $client_id;
     protected $client_secret;
     protected $redirect_uri;
@@ -201,9 +201,7 @@ class MasLuz
 
         $res=curl_exec($ch);
 
-        print_r($res);
-        exit;
-
+        
         $return["body"] = json_decode($res);
         $return["httpCode"] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
@@ -228,7 +226,7 @@ class MasLuz
             }
             $uri = $this->API_ROOT_URL.$path;
         } else {
-            $uri = $path;
+            $uri = $this->API_ROOT_URL.$path;
         }
 
         if(!empty($params)) {
