@@ -7,5 +7,7 @@ $ml->getAccessToken();
 $result = $ml->get('customer');
 
 echo '<pre>';
-print_r($result);
+foreach ($result['body']->_embedded->customer as $cli){
+	echo $cli->name."\n";
+}
 echo '</pre>';

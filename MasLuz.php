@@ -201,7 +201,7 @@ class MasLuz
 
         $res=curl_exec($ch);
 
-        
+        //print_r($res);
         $return["body"] = json_decode($res);
         $return["httpCode"] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
