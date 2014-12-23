@@ -189,7 +189,7 @@ class MasLuz
         $ch = curl_init($uri);
         curl_setopt_array($ch, self::$CURL_OPTS);
 
-        if($this->access_token){
+        if($this->access_token=$this->getAccessToken()){
             $oauth = array(
                 CURLOPT_HTTPHEADER => array('Authorization: Bearer '.$this->access_token)
             );
