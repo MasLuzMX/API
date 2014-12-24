@@ -44,7 +44,7 @@ class MasLuz
     public function __construct($client_id, $client_secret, $access_token = null, $refresh_token = null) {
         $this->client_id     = $client_id;
         $this->client_secret = $client_secret;
-        $this->access_token  = $access_token;
+        $this->access_token  = $access_token ? $access_token : $this->getAccessToken();
         $this->refresh_token = $refresh_token;
     }
 
@@ -189,7 +189,7 @@ class MasLuz
         $ch = curl_init($uri);
         curl_setopt_array($ch, self::$CURL_OPTS);
 
-        if($this->access_token=$this->getAccessToken()){
+        if($this->access_token){
             $oauth = array(
                 CURLOPT_HTTPHEADER => array('Authorization: Bearer '.$this->access_token)
             );
@@ -201,7 +201,6 @@ class MasLuz
 
         $res=curl_exec($ch);
 
-        //print_r($res);
         $return["body"] = json_decode($res);
         $return["httpCode"] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
